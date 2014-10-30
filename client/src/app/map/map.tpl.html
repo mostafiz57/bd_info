@@ -1,0 +1,245 @@
+<div id="main-map" class="container-fluid user"   >
+    <div class="row head" style="height:100px">
+      <div class="new-paper-btn">
+    <div class="row">
+        <div class="col-md-12">
+
+                <div class="col-sm-2">
+                    <button class="btn btn-primary btn-lg" ng-click='showModel()'>
+                        <i class="fa fa-plus"></i>
+                        New paper
+                    </button>
+                </div>
+
+                <div class="col-sm-3">
+                  <label class="control-label">
+                    Publication Type
+                  </label>
+
+                   <select class="form-control search-select" ng-name="publicationType">
+                    <option value="0">Please select publiction</option>
+                      <option ng-repeat="ps in PublicatonStatus" value="{{ps}}"> {{ps}}</option>
+                   </select>
+                  
+                </div>
+
+              
+
+                <div class="col-sm-3">
+                  <label class="control-label">
+                     Paper type
+                </label>
+                 <select  class="form-control search-select" data-ng-model="tp" ng-name="paperType">
+                    <option value="0">Please Select Type</option>
+                     <option ng-repeat="t in PaperType" value="{{t}}">{{t}}</option>
+                </select>
+
+
+
+              </div>
+
+                <div class="col-sm-3">
+
+                  <label class="control-label">
+                    Language
+                    </label>
+                 <select  class="form-control search-select"  ng-name="language">
+                    <option value="0">Please Select Language</option>
+                     <option ng-repeat="l in Language" value="{{l}}">{{l}}</option>
+                </select>
+              </div>
+
+        </div>
+    </div>
+
+      </div>
+        
+    </div>
+
+    <!-- start: News paper Table -->
+    <div class="row">
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" style="text-align:center">{{modalTitle}}</h4>
+      </div>
+      <div class="modal-body">
+
+       
+          <div class="row">
+            <div class="col-md-12">
+               <form novalidate id="newspaperForm"  class="form-horizontal" name="formPaper">
+                <input type="hidden" name="paperID" value="{{deafualtForm.paper_id}}"/>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label" for="paper-type">
+                        Paper type
+                    </label>
+
+                    <div class="col-sm-8">
+                         <select id="PaperType" class="form-control search-select" ng-model ="deafualtForm.PaperType" ng-name="paperType">
+                            <option value="NA">Please Select Type</option>
+                             <option ng-repeat="t in PaperType" value="{{t}}">{{t}}</option>
+                        </select>
+
+                    </div>
+                   
+               </div>
+
+               <div class="form-group">
+                   
+                        <label class="col-sm-3 control-label" for="rank">
+                        Rank
+                        </label>
+
+                        <div class="col-sm-3">
+                        <input type="text" ng-pattern="/[0-9]/"  class="form-control" ng-model="deafualtForm.rank" ng-name="pRank" >
+                        </div>
+
+                        <label class="col-sm-2 control-label" for="hotlist">
+                            Hot list
+                        </label>
+                        <input type="checkbox" class="flat-green" checked="checked" value="2" ng-model ="deafualtForm.isHotlisted" ng-name = "pHotlisted">
+                    
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label" for="language">
+                        Language <span class="symbol required"></span>
+                    </label>
+
+                    <div class="col-sm-8">
+                        <select  id="PaperLanguage" class="form-control search-select" ng-model ="deafualtForm.laguage" ng-name="language">
+                            <option value="">Please Select Language</option>
+                             <option ng-repeat="l in Language">{{l}}</option>
+                        </select>
+                    </div>
+                    
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label" for="publication-status">
+                      Publication status
+                    </label>
+
+                    <div class="col-sm-8">
+                        <select id="publicatonStatus" class="form-control search-select" ng-model ="deafualtForm.status" ng-name="p-status">
+                            <option value="">Please Select Publication Status</option>
+                             <option ng-repeat="s in PublicatonStatus" >{{s}}</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                  <label class="col-sm-3 control-label" for="name">
+                    Name
+                  </label>
+                 
+                    <div class="col-sm-8">
+                        <input type="text" id="name" placeholder="Please Enter Name"  class="form-control" ng-model="deafualtForm.name" ng-name="name" required>
+
+                           <span class="error-message" ng-show="!formPaper.name.hasFocus &&  formPaper.name.$error.required">This field is required.</span>
+
+                    </div>
+                    
+                </div>
+
+                <div class="form-group">
+
+                  <label class="col-sm-3 control-label" for="url">
+                    Url
+                  </label>
+                 
+                    <div class="col-sm-8">
+                        <input type="url" placeholder="Please Enter Url"  class="form-control" ng-model="deafualtForm.url" ng-name="pUrl"  required >
+                    </div>
+                    
+                </div>
+
+                <div class="form-group">
+
+                  <label class="col-sm-3 control-label" for="editor">
+                    Editor
+                  </label>
+                 
+                    <div class="col-sm-8">
+                        <input type="text" placeholder="Please Enter editor"  class="form-control" ng-model="deafualtForm.editor" ng-name="pEditor" >
+                    </div>
+                    
+                </div>
+
+                <div class="form-group">
+
+                  <label class="col-sm-3 control-label" for="startingDate">
+                    Starting Date
+                  </label>
+                 
+                    <div class="col-sm-8">
+                        <div class='input-group date' id ="stDate" data-date-format="mm/dd/yyyy"  ng-model="deafualtForm.sdate">
+                          <input id = "sDate" type='text' class="form-control"  ng-model="deafualtForm.stDate" ng-name="pStDate" />
+                           <span class="input-group-addon" style="cursor:pointer"><span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+              
+          </div>
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"  >Close</button>
+        <button ng-disabled="formPaper.$invalid" type="button" class="btn btn-primary" ng-click=addPaper(deafualtForm)>{{textSaveBtn}} </button>
+      </div>
+    </div>
+  </div>
+</div>
+        <div class="col-md-12">
+                <div class="panel-body" >
+                    <table class="table table-striped table-bordered table-hover table-full-width" id="sample_1" >
+                        <thead>
+                            <tr>
+                                 <th style="display:none" > id</th>
+                                <th>Paper Name</th>
+                                <th>Language</th>
+                                <th>Publication Type</th>
+                                <th>Url</th>
+                                <th style="text-align:center">Starting Date</th>
+                                <th style="text-align:center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <tr   ng-repeat="p in newsPapers">
+                             <td style="display:none" > {{p.paper_id}} </td>
+                             <td> {{p.paper_name}} </td>
+                             <td> {{p.paper_language}} </td>
+                             <td> {{p.publication_status}} </td>
+                             <td> {{p.url}} </td>
+                             <td> {{p.starting_date  | date:'d MMMM yyyy' : 'UTC' }} </td>
+                              <td style="text-align:center">
+                                    <a href="#" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit" ng-click='showEditModel(p)'><i class="fa fa-edit"></i></a>
+                                </td>
+                              
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+        </div>
+    </div>
+
+    </div>
+
+</div>
+
+
+
+

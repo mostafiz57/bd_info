@@ -1,0 +1,46 @@
+{
+  "name": "bd_bower",
+  "version": "0.0.1",
+  "description": "Give Bangladesh info",
+  "main": "server.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "bd",
+    "info"
+  ],
+  "authors": [
+    "Mostafiz"
+  ],
+  "license": "MIT",
+  "homepage": "index.js",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "angular-resource": "~1.2.25",
+    "angular-cookies": "~1.2.25",
+    "d3": "~3.4.11",
+    "moment": "~2.8.3",
+    "angular-ui-select2": "~0.0.5",
+    "jquery-icheck": "1.0.2",
+    "angular-bootstrap-switch": "~0.3.0"
+  },
+  "devDependencies": {
+    "angular": "~1.2.25",
+    "angular-mocks": "~1.2.25",
+    "bootstrap": "~3.2.0",
+    "font-awesome": "~4.2.0",
+    "angular-bootstrap": "~0.11.0",
+    "angular-ui-router": "~0.2.11",
+    "lodash": "~2.4.1"
+  }
+}

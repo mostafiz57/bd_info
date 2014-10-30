@@ -1,0 +1,275 @@
+//color
+$font-face: "Open Sans" sans-serif
+$light-grey: #f9f9f9
+$grey: #efefef
+$dark-grey: #dddddd
+$light-green: #7ebf22
+$green: #589600
+$text-dark: #333333
+$text-light: #9f9f9f
+
+$font-size: 12px
+$padding: 10px
+$margin: 10px
+
+body
+	font-family: $font-face
+	color: $text-dark
+	font-size: $font-size
+	line-height: 1.4em
+
+a
+	color: $light-green
+	transition: all 0.3s ease-out
+	&:hover, &:focus
+		color: $green
+		transition: all 0.3s ease-out
+.btn
+	font-weight: bold
+	text-transform: capitalize
+	font-size: 1em
+.btn-primary
+	background-color: $light-green
+	transition: all 0.3s ease-out
+	border-color: $light-green
+	&:hover, &:focus, &.active
+		background-color: $green
+		border-color: $green
+		transition: all 0.3s ease-out
+.primary
+	background-color: $light-green
+	color: white
+	a
+		color: white
+	&:hover, &:focus, &:active
+		background-color: $green !important
+		color: white
+.light
+	color: $text-light
+
+input.form-control
+	border-radius: 2px
+	border: 1px solid $grey
+	padding: $padding/2
+	&:hover, &:focus, &:active
+		outline: none
+		-webkit-appearance: none
+
+.navbar
+	border: none
+	border-bottom: 1px solid #d0d0d0
+	//background-color: #222
+.navbar-inverse
+	.navbar-brand
+		color: #fff
+		font-size: 22px
+	.navbar-nav
+		li
+			a
+				font-size: 1.1em
+				color: white
+				border-right: 1px solid $text-dark
+				&:hover, &:active, &:focus
+					color: $light-green
+			&.active
+				background-color: #000
+			&.user-card
+				ul
+					a
+						color: $text-dark
+						&:hover
+							color: darken($text-dark, 10%)
+
+.subnav
+	border: none
+	border-radius: 0
+	background-color: rgba(0, 0, 0, 0.6)
+
+//============home page only===========
+#main
+	.home-bg
+		background-image: url("../img/home-bg.jpg")
+		background-repeat: no-repeat
+		background-size: cover
+		.welcome
+			color: white
+			text-shadow: 1px 1px 4px rgba(0, 0, 0,0.8)
+			p
+				font-size: 1.2em
+		.form-control
+			border: none
+			outline: none
+			border-left: 1px solid $grey
+			box-shadow: none
+			background-color: white
+			&:hover, &:focus, &:active
+				-webkit-appearance: none
+				outline: none
+				box-shadow: none
+				border: none
+				border-left: 1px solid $grey
+		.input-group
+			padding: $padding 0
+			border: 1px solid $grey
+			border-radius: 2px
+			background-color: white
+		.input-group-addon
+			background-color: white
+			border: none
+
+.panel-default
+	background-color: $light-grey
+	opacity: 0.95
+	border: 1px solid $grey
+	border-radius: 5px
+
+
+.panel-login
+	.panel-heading
+		padding: $padding*3 $padding $padding*3 $padding*5
+		font-weight: bold
+		text-transform: capitalize
+		font-size: 1.4em
+		position: relative
+		i.circle-fill
+			position: absolute
+			line-height: 60px
+			width: 60px
+			background-color: $light-green
+			border-radius: 100%
+			text-align: center
+			font-size: 1.5em
+			color: white
+			top: 50%
+			left: 0
+			margin-top: -30px
+			margin-left: -30px
+
+
+
+//===============map page =============
+
+input
+	&[type="text"],
+	&[type="password"],
+	&[type="datetime"],
+	&[type="datetime-local"],
+	&[type="textarea"],
+	&[type="month"], 
+	&[type="time"], 
+	&[type="week"], 
+	&[type="number"], 
+	&[type="email"], 
+	&[type="url"], 
+	&[type="search"],
+	&[type="tel"], 
+	&[type="color"]
+		background-color: #ffffff
+		border: 1px solid #d5d5d5
+		border-radius: 0 !important
+		box-shadow: none
+		color: #858585
+		font-family: inherit
+		font-size: 14px
+		line-height: 1.2
+		padding: 5px 4px
+		transition-duration: 0.1s
+
+.form-horizontal
+	input.ng-invalid.ng-dirty
+		border-color: #a94442
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset
+
+.form-horizontal 
+	input.ng-valid.ng-dirty 
+		border: 1px solid #d5d5d5
+
+.new-paper-btn
+	padding-top : 70px
+	padding-left : 31px
+
+.icon-double-angle-left 
+	&:before
+		content: "\f100"
+
+.icon-double-angle-right
+	&:before 
+		content: "\f101"
+
+.select2-container 
+	.select2-choice 
+		background-clip: padding-box !important
+		background-color: #FFFFFF !important
+		background-image: none !important
+		background-repeat: no-repeat !important
+		border: 1px solid #CCCCCC !important
+		border-radius: 0 !important
+		box-shadow: none !important
+		color: #555555 !important
+		display: block !important
+		height: 34px !important
+		line-height: 29px !important
+		margin-top: 3px !important
+		overflow: hidden !important
+		padding: 0 12px 0 8px !important
+		position: relative !important
+		text-decoration: none !important
+		white-space: nowrap !important
+
+.search-select 
+	border: medium none
+	box-shadow: none
+	padding: 0 !important
+
+.select2-container 
+	.select2-choice 
+		.select2-arrow 
+			background-color: #ffffff !important
+			background-image: none !important
+			text-align: center
+			width: 28px !important
+
+.select2-container 
+	.select2-choice 
+		color: #555555 !important
+		line-height: 29px !important
+		white-space: nowrap !important
+
+
+.select2-container 
+	.select2-choice 
+		.select2-arrow 
+			b:before 
+			content: "\f078"
+			display: inline
+			font-family: FontAwesome
+			font-weight: 300
+			height: auto
+			text-shadow: none
+
+.btn-teal 
+	background-color: #569099
+	border-color: #4d8189
+	color: #ffffff
+
+.features-books 
+	.slide 
+		border: 1px solid #e5e5e5
+		padding: 18px
+		transition: all 1s ease 0s
+
+.panel
+	background-color: #fff !important
+
+
+
+
+
+
+
+
+
+
+
+
+
