@@ -1,5 +1,5 @@
-# Bangladesh Information ..It is very good project for structure 
-Web client for umaps tracker
+# Bangladesh Information ..It is very good project for learning node project structure 
+
 
 ## Stack
 This app is based on (M)EAN stack. The bracket wrapped arround M mean that mongodb is not required, may be it would be included sometime in the future.
