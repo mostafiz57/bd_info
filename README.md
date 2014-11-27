@@ -1,4 +1,4 @@
-# Bangladesh Information ..It is very good project for learning node project structure 
+# Bangladesh Information 
 
 
 ## Stack
